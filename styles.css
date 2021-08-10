@@ -223,8 +223,10 @@ section .title::after{
     width: 55%;
 }
 .about .about-content .right .text{
-    font-size: 25px;
+    font-family: 'Ubuntu', cursive;
+    font-size: 26px;
     font-weight: 600;
+    text-align: justify;
     margin-bottom: 10px;
 }
 .about .about-content .right .text span{
@@ -233,7 +235,7 @@ section .title::after{
 .about .about-content .right p{
     font-size: 26px;
     font-weight: 300;
-    font-family: cursive;
+    font-family: 'Ubuntu', cursive;
     text-align: justify;
 }
 .about .about-content .right a{
@@ -308,6 +310,7 @@ section .title::after{
     width: calc(50% - 30px);
 }
 .skills .skills-content .left .text{
+  font-family: 'Poppins';
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
@@ -475,6 +478,10 @@ section .title::after{
 }
 .contact .contact-content .info .sub-title{
     color: #333;
+}
+.contact .contact-content .info .sub-title a {
+  color: #333;
+  text-decoration: none;
 }
 .contact .right form .fields{
     display: flex;
