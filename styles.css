@@ -27,6 +27,7 @@ html{
 /* all similar content styling codes */
 section{
     padding: 100px 0;
+   background-color: black;
 }
 .max-width{
     max-width: 1300px;
@@ -207,6 +208,9 @@ section .title::after{
 }
 
 /* about section styling */
+.about .max-width .title {
+  color: #fff;
+}
 .about .title::after{
     content: "who i am";
 }
@@ -222,12 +226,13 @@ section .title::after{
 .about .about-content .right{
     width: 55%;
 }
-.about .about-content .right .text{
+.about .about-content .right p.text{
     font-family: 'Ubuntu', cursive;
     font-size: 26px;
     font-weight: 600;
     text-align: justify;
     margin-bottom: 10px;
+    color: #fff;
 }
 .about .about-content .right .text span{
     color: crimson;
@@ -237,6 +242,7 @@ section .title::after{
     font-weight: 300;
     font-family: 'Ubuntu', cursive;
     text-align: justify;
+    color: #fff;
 }
 .about .about-content .right a{
     display: inline-block;
@@ -256,6 +262,9 @@ section .title::after{
 }
 
 /* services section styling */
+.services .max-width .title {
+  color: #fff;
+}
 .services, .teams{
     color:#fff;
     background: #111;
@@ -302,7 +311,9 @@ section .title::after{
 }
 
 /* skills section styling */
-
+.skills .max-width .title {
+  color: #fff;
+}
 .skills .title::after{
     content: "what i know";
 }
@@ -314,9 +325,11 @@ section .title::after{
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
+    color: #fff;
 }
 .skills .skills-content .left p {
     text-align: justify;
+    color: #fff;
 }
 .skills .skills-content .left a {
     display: inline-block;
@@ -346,6 +359,7 @@ section .title::after{
 .skills .skills-content .right span{
     font-weight: 500;
     font-size: 18px;
+    color: #fff;
 }
 .skills .skills-content .right .line{
     height: 5px;
@@ -380,6 +394,27 @@ section .title::after{
     width: 30%;
 }
 
+/* work section styling */
+.work .title::after {
+  content: "what I've done";
+}
+.work .max-width .title {
+  color: #fff;
+}
+.work .work-content .row{
+  display: flex;
+  flex-direction: row;
+}
+.work .work-content .col {
+    width: calc(35% - 20px);
+    border-radius: 6px;
+    padding: 20px 25px;
+    cursor: pointer;
+}
+.work .work-content .col a img {
+    width: 100%;
+    height: 100%;
+}
 /* teams section styling */
 .teams .title::after{
     content: "who with me";
@@ -444,6 +479,9 @@ section .title::after{
 }
 
 /* contact section styling */
+.contact .max-width .title {
+  color: #fff;
+}
 .contact .title::after{
     content: "get in touch";
 }
@@ -457,6 +495,7 @@ section .title::after{
 }
 .contact .contact-content .left p{
     text-align: justify;
+    color: #fff;
 }
 .contact .contact-content .left .icons{
     margin: 10px 0;
@@ -475,12 +514,13 @@ section .title::after{
 }
 .contact .contact-content .info .head{
     font-weight: 500;
+    color: #fff;
 }
 .contact .contact-content .info .sub-title{
-    color: #333;
+    color: #fff;
 }
 .contact .contact-content .info .sub-title a {
-  color: #333;
+  color: #fff;
   text-decoration: none;
 }
 .contact .right form .fields{
@@ -642,6 +682,14 @@ footer span a:hover{
         width: 100%;
         margin-bottom: 35px;
     }
+.work .work-content .row {
+  display: flex;
+  flex-direction: column;
+}
+.work .work-content .row .col {
+  width: calc(50% - 10px);
+  margin-bottom: 20px;
+}
 }
 
 @media (max-width: 690px) {
@@ -659,6 +707,9 @@ footer span a:hover{
     }
     .services .serv-content .card{
         width: 100%;
+    }
+    .work .work-content .row .col {
+      width: 100%;
     }
 }
 
