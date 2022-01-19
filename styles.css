@@ -381,17 +381,20 @@ section .title::after{
 .skills-content .right .css::before{
     width: 70%;
 }
+.skills-content .right .scss::before{
+    width: 70%;
+}
 .skills-content .right .js::before{
     width: 70%;
 }
 .skills-content .right .python::before{
-    width: 50%;
+    width: 80%;
 }
 .skills-content .right .php::before{
     width: 60%;
 }
 .skills-content .right .mysql::before{
-    width: 30%;
+    width: 80%;
 }
 
 /* work section styling */
@@ -404,6 +407,8 @@ section .title::after{
 .work .work-content .row{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
 }
 .work .work-content .col {
     width: calc(35% - 20px);
