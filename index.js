@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-const sendEmail = () => {
+const sendEmails = () => {
     emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
