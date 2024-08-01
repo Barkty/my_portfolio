@@ -457,7 +457,7 @@
           <div class="swiper-wrapper">
             <!-- ------------------------portfollio 1-------------------- -->
             <div class="portfolio__content grid swiper-slide">
-              <img src="assets/img/portfolio5.png" class="portfolio__img" />
+              <img src="assets/img/vendor.png" class="portfolio__img" />
 
               <div class="portfolio__data">
                 <h3 class="portfolio__title">BridgeOrder Vendor Panel</h3>
@@ -483,7 +483,7 @@
             <!-- ------------------------portfollio 2-------------------- -->
 
             <div class="portfolio__content grid swiper-slide">
-              <img src="assets/img/portfolio1.png" class="portfolio__img" />
+              <img src="assets/img/order.png" class="portfolio__img" />
 
               <div class="portfolio__data">
                 <h3 class="portfolio__title">
@@ -513,7 +513,7 @@
 
             <!-- ------------------------portfollio 3-------------------- -->
             <div class="portfolio__content grid swiper-slide">
-              <img src="assets/img/portfolio2.png" class="portfolio__img" />
+              <img src="assets/img/faida.png" class="portfolio__img" />
 
               <div class="portfolio__data">
                 <h3 class="portfolio__title">Faida Tower</h3>
@@ -541,7 +541,7 @@
             </div>
             <!-- ------------------------portfollio 4-------------------- -->
             <div class="portfolio__content grid swiper-slide">
-              <img src="assets/img/portfolio3.png" class="portfolio__img" />
+              <img src="assets/img/careers.jpeg" class="portfolio__img" />
 
               <div class="portfolio__data">
                 <h3 class="portfolio__title">SAHCO Careers</h3>
@@ -567,7 +567,7 @@
 
             <!-- ------------------------portfollio 5-------------------- -->
             <div class="portfolio__content grid swiper-slide">
-              <img src="assets/img/portfolio4.png" class="portfolio__img" />
+              <img src="assets/img/budget.png" class="portfolio__img" />
 
               <div class="portfolio__data">
                 <h3 class="portfolio__title">SAHCO Budget</h3>
@@ -592,12 +592,12 @@
             </div>
             <!-- ------------------------portfollio 6-------------------- -->
             <div class="portfolio__content grid swiper-slide">
-              <img src="assets/img/portfolio4.png" class="portfolio__img" />
+              <img src="assets/img/internals.jpeg" class="portfolio__img" />
 
               <div class="portfolio__data">
                 <h3 class="portfolio__title">SAHCO Internals</h3>
                 <p class="portfolio__description">
-                  Internaladminmulti-appdashboard
+                  Internal admin multi-app dashboard
                 </p>
                 <!-- <a
                   href="https://github.com/Venkateeshh/Sorting-Visualizer"
@@ -670,39 +670,38 @@
             </div>
           </div>
 
-          <form action="" class="contact__form grid">
+          <form id="contact-form" onsubmit="sendEmail()" class="contact__form grid">
             <div class="contact__inputs grid">
               <div class="contact__content">
-                <label for="" class="content__label">Name</label>
-                <input type="text" class="contact__input" />
+                <label for="name" class="content__label">Name</label>
+                <input type="text" id="name" class="contact__input" />
               </div>
 
               <div class="contact__content">
-                <label for="" class="content__label">Email</label>
-                <input type="Email" class="contact__input" />
+                <label for="email" class="content__label">Email</label>
+                <input type="email" id="email" class="contact__input" />
               </div>
             </div>
 
             <div class="contact__content">
-              <label for="" class="content__label">Message</label>
+              <label for="message" class="content__label">Message</label>
               <textarea
                 name=""
-                id=""
+                id="message"
                 cols="0"
                 rows="7"
                 class="contact__input"
               ></textarea>
             </div>
 
-            <div>
+            <button class="transparent" type="submit">
               <a
-                href="mailto:gkotoye@gmail.com?subject=Testing out mailto! &body=This is only a test!"
                 class="button button--flex"
               >
                 Send Message
                 <i class="uil uil-message button__icon"></i>
               </a>
-            </div>
+            </button>
           </form>
         </div>
       </section>
@@ -767,6 +766,36 @@
       src="https://kit.fontawesome.com/2205d59d52.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="index.js"></script>
+    <script>
+        // JavaScript function to send email
+        const sendEmail = () => {
+            emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+
+                const templateParams = {
+                name: name,
+                email: email,
+                message: message
+                };
+
+                emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                .then((response) => {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Email sent successfully!');
+                }, (error) => {
+                    console.log('FAILED...', error);
+                    alert('Failed to send email. Please try again later.');
+                });
+            });
+        };
+    </script>
   </body>
 </html>

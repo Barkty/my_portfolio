@@ -147,5 +147,31 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("selected-theme", getCurrentTheme());
       localStorage.setItem("selected-icon", getCurrentIcon());
     });
-  });
-  
+});
+
+const sendEmail = () => {
+    emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      const templateParams = {
+        name: name,
+        email: email,
+        message: message
+      };
+
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+        .then((response) => {
+          console.log('SUCCESS!', response.status, response.text);
+          alert('Email sent successfully!');
+        }, (error) => {
+          console.log('FAILED...', error);
+          alert('Failed to send email. Please try again later.');
+        });
+    });
+}

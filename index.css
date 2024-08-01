@@ -700,6 +700,10 @@ img {
   visibility: visible;
 }
 
+.transparent {
+    background-color: transparent;
+    border: none;
+}
 /*================== Portfolio ==================*/
 
 .portfolio__container {
